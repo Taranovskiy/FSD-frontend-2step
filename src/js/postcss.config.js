@@ -1,16 +1,16 @@
 module.exports = {
-  plugins: [
-    require('autoprefixer'),
-    require('css-mqpacker'),
-    require('cssnano')({
+  plugins: {
+    autoprefixer: {},
+    'css-mqpacker': {},
+    cssnano: {
       preset: [
         'default',
         {
           discardComments: {
-            removeAll: true
-          }
-        }
-      ]
-    })
-  ]
-}
+            removeAll: true,
+          },
+        },
+      ],
+    },
+  },
+};
