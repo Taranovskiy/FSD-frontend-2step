@@ -10,7 +10,15 @@
     "eslint-report": "eslint --ext .js ./src",
     "puglint-report": "pug-lint ./src -r inline",
     "stylelint-report": "stylelint ./src",
-    "lint": "npm run eslint-report && npm run puglint-report && npm run stylelint-report"
+    "lint": "npm run eslint-report && npm run puglint-report && npm run stylelint-report",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "npm run lint --max-warnings=0"
+      "prettier --write",
+      "git add"
+    ]
   },
   "browserslist": [
     "last 2 version"
